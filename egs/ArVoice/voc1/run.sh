@@ -17,7 +17,7 @@ n_jobs=16       # number of parallel jobs in feature extraction
 conf=conf/parallel_wavegan.v1.yaml
 
 # directory path setting
-db_root=/home/rufael/Projects/ArVoice-syn # direcotry including spk name directory (MODIFY BY YOURSELF)
+db_root=/home/rufael/Projects/voice-anonymization/data/ArVoice # direcotry including spk name directory (MODIFY BY YOURSELF)
                           # e.g.
                           # /path/to/database
                           # ├── spk_1
@@ -31,12 +31,12 @@ db_root=/home/rufael/Projects/ArVoice-syn # direcotry including spk name directo
 dumpdir=dump # directory to dump features
 
 # subset setting
-spks="ar-XA-Wavenet-A ar-XA-Wavenet-B ar-XA-Wavenet-C ar-XA-Wavenet-D"   # speaker name to be used (e.g. "ar-XA-Wavenet-A ar-XA-Wavenet-B ar-XA-Wavenet-C ar-XA-Wavenet-D")
+spks="ar-XA-Wavenet-A ar-XA-Wavenet-B"   # speaker name to be used (e.g. "ar-XA-Wavenet-A ar-XA-Wavenet-B ar-XA-Wavenet-C ar-XA-Wavenet-D")
               # it must be matched the name under the ${db_root}
               # if set to "all", all of the speakers in ${db_root} will be used
 shuffle=false # whether to shuffle the data to create subset
-num_dev=100    # the number of development data for each speaker
-num_eval=250   # the number of evaluation data for each speaker
+num_dev=20    # the number of development data for each speaker
+num_eval=10   # the number of evaluation data for each speaker
               # (if set to 0, the same dev set is used as eval set)
 
 # training related setting

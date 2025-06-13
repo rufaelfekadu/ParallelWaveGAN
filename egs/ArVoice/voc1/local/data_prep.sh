@@ -70,7 +70,7 @@ for subgroup in "${db_root}"/*/; do
             # Extract subgroup name for unique ID
             subgroup_name=$(basename "$(dirname "${filename}")")
             parent_dir=$(basename "$(dirname "$(dirname "${filename}")")")
-            id=${spk}_${parent_dir}_$(basename "${filename}" | sed -e "s/\.[^\.]*$//g")
+            id=${spk}_$(basename "${filename}" | sed -e "s/\.[^\.]*$//g")
             echo "${id} cat ${filename} | sox -t wav - -c 1 -b 16 -t wav - rate ${fs} |" >> "${scp}"
             
             # Separate test files and non-test files
